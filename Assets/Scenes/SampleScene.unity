@@ -137,6 +137,7 @@ GameObject:
   - component: {fileID: 91876186}
   - component: {fileID: 91876185}
   - component: {fileID: 91876184}
+  - component: {fileID: 91876188}
   m_Layer: 9
   m_Name: Player
   m_TagString: Untagged
@@ -223,7 +224,7 @@ CircleCollider2D:
   m_GameObject: {fileID: 91876181}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 0e0cf6f6a1988414aad01e1ce8101094, type: 2}
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -239,7 +240,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 91876181}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 0e0cf6f6a1988414aad01e1ce8101094, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -289,8 +290,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 496354f17a52fe04c90f0dc1e0e2bea0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_JumpForce: 700
-  m_CrouchSpeed: 0.4
+  m_JumpForce: 450
+  m_CrouchSpeed: 0.5
   m_MovementSmoothing: 0.05
   m_AirControl: 1
   m_WhatIsGround:
@@ -305,6 +306,20 @@ MonoBehaviour:
   OnCrouchEvent:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &91876188
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 91876181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0683427ce17735446aeb0c32ea79250e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  controller: {fileID: 91876187}
+  runSpeed: 40
 --- !u!1 &210669291
 GameObject:
   m_ObjectHideFlags: 0
