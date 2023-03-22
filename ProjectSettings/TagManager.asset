@@ -8,13 +8,13 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Background
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
+  - MidBackground
+  - Ground
+  - ForeGround
+  - Player
   - 
   - 
   - 
