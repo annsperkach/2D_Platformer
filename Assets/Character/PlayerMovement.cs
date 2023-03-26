@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour {
     public CharacterController2D controller;
 public Animator animator;
+public Joystick joystick;
 
     public float runSpeed = 40f;
     float horizontalMove = 0f;
@@ -15,19 +16,35 @@ public Animator animator;
     // Update is called once per frame
     void Update()
     {
-     horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
+     if (joystick.Horizontal >= .2f) 
+     {
+        horizontalMove = runSpeed;
+     } 
+     else if (joystick.Horizontal <= -.2f)
+     {
+        horizontalMove = -runSpeed;
+     }
+     else
+     {
+        horizontalMove = 0f;
+     }
+     //horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
+
+    float verticalMove = joystick.Vertical;
 
      animator.SetFloat("Speed", Mathf.Abs(horizontalMove));
 
-     if (Input.GetButtonDown("Jump"))
+     //if (Input.GetButtonDown("Jump"))
+     if (verticalMove >= .2f)
      {
         jump = true;
      }
 
-          if (Input.GetButtonDown("Crouch"))
+    //if (Input.GetButtonDown("Crouch"))
+    if (verticalMove <= -.2f)
      {
         crouch = true;
-     } else if (Input.GetButtonUp("Crouch"))
+     } else //if (Input.GetButtonUp("Crouch"))
      {
         crouch = false;
      }
