@@ -28,23 +28,23 @@ public Joystick joystick;
      {
         horizontalMove = 0f;
      }
-     //horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
+     horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
 
     float verticalMove = joystick.Vertical;
 
      animator.SetFloat("Speed", Mathf.Abs(horizontalMove));
 
-     //if (Input.GetButtonDown("Jump"))
-     if (verticalMove >= .2f)
+     if (Input.GetButtonDown("Jump"))
+     //if (verticalMove >= .2f)
      {
         jump = true;
      }
 
-    //if (Input.GetButtonDown("Crouch"))
-    if (verticalMove <= -.2f)
+    if (Input.GetButtonDown("Crouch"))
+    //if (verticalMove <= -.2f)
      {
         crouch = true;
-     } else //if (Input.GetButtonUp("Crouch"))
+     } else if (Input.GetButtonUp("Crouch"))
      {
         crouch = false;
      }
